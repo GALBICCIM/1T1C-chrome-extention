@@ -1,3 +1,27 @@
 body {
-  background-color: #1c1c1c;
+	width: 400px;
+	height: 560px;
+	background-color: #0099ff;
+	padding: 10px;
+}
+
+.start-btn {
+	background: none;
+	font-weight: bold;
+	font-size: 1rem;
+	padding: 6px 22px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.start-btn:hover {
+	background: red;
+	color: white;
+}
+
+.card-grid {
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 20px;
 }
