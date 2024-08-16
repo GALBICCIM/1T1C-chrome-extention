@@ -8,13 +8,18 @@ type Card = {
 
 interface CardProps {
 	card: Card;
+	handleChoice(card: Card): void;
+	flipped: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ card }) => {
+const Card: React.FC<CardProps> = ({ card, handleChoice, flipped }) => {
+	const clickedCard = () => {
+		handleChoice(card);
+	};
+
 	return (
 		<div className="card">
-			<img className="cart-front" src={card.src} alt="front" />
-			<img className="cart-back" src="../static/imgs/back.jpg" alt="back" />
+			{flipped ? <img className="card-front" src={card.src} alt="front" /> : <img className="card-back" onClick={clickedCard} src="/imgs/back.jpg" alt="back" />}
 		</div>
 	);
 };
